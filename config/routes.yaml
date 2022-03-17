@@ -5,3 +5,9 @@ controllers:
 kernel:
     resource: ../src/Kernel.php
     type: annotation
+index:
+   path: /{age}
+   controller: App\Controller\TestController::index
+   defaults :
+     age: 0
+

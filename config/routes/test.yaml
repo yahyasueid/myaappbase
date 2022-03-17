@@ -1,0 +1,6 @@
+
+test:
+   path: /{age}
+   controller: App\Controller\TestController::test
+   defaults :
+     age: 0
