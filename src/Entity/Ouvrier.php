@@ -24,6 +24,21 @@ class Ouvrier
     #[ORM\Column(type: 'string', length: 255)]
     private $nom;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $nni;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $ville;
+
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $za;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $experience;
+
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -61,6 +76,54 @@ class Ouvrier
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getNni(): ?string
+    {
+        return $this->nni;
+    }
+
+    public function setNni(string $nni): self
+    {
+        $this->nni = $nni;
+
+        return $this;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->ville;
+    }
+
+    public function setVille(string $ville): self
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    public function getZa(): ?string
+    {
+        return $this->za;
+    }
+
+    public function setZa(string $za): self
+    {
+        $this->za = $za;
+
+        return $this;
+    }
+
+    public function getExperience(): ?string
+    {
+        return $this->experience;
+    }
+
+    public function setExperience(string $experience): self
+    {
+        $this->experience = $experience;
 
         return $this;
     }

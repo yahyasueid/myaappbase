@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use ApiPlatform\Core\GraphQl\Resolver\Stage\SerializeStageInterface;
 use App\Entity\Company;
 use App\Repository\CompanyRepository;
 use App\Repository\OuvrierRepository;
@@ -31,12 +32,12 @@ class ApiOvrierController extends AbstractController
     }
 
     #[Route('/api/company', name: 'app_api_company')]
-    public function apicompany(CompanyRepository $companyrepository): Response
+    public function apicompany(CompanyRepository $companyrepository, SerializerInterface $serializerInterface): Response
     {
-        //$allcompany = $companyrepository->findAll();
-        //$seriacompany = $serializerInterface->serialize($allcompany, 'json');
+        $allcompany = $companyrepository->findAll();
+        $seriacompany = $serializerInterface->serialize($allcompany, 'json');
         //$json = json_encode($allouvrier);
-        //dd($seriacompany);
+        dd($seriacompany);
         return $this->json($companyrepository->findAll(), 200, []);
 
         // $response = new Response($seriacompany, 200, [
