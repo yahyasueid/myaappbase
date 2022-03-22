@@ -7,7 +7,7 @@ kernel:
     type: annotation
 index:
    path: /{age}
-   controller: App\Controller\TestController::index
+   controller: App\Controller\MainController::index
    defaults :
      age: 0
 
